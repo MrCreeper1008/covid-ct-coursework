@@ -28,15 +28,16 @@ const submitButton = document.getElementsByClassName('register-btn')[0]
  */
 function validateForm(form) {
   // first, check if all fields are present.
-  for (const field in FIELDS) {
-    if (!form.get(field)) {
-      new Notification({
-        title: 'Missing required field!',
-        message: `You must fill in the ${field} field.`,
-        level: NOTIFICATION_ERROR,
-      }).show()
-      return false
-    }
+  const missingField = findMissingField(form, FIELDS)
+
+  if (missingField) {
+    submitButton.disabled = false
+    new Notification({
+      title: 'Missing required field!',
+      message: `You must fill in the ${missingField} field.`,
+      level: NOTIFICATION_ERROR,
+    }).show()
+    return false;
   }
 
   const password = form.get(FIELDS.password)
@@ -46,6 +47,7 @@ function validateForm(form) {
     // password has to contain at least one uppercase, one lower case letter and one digit.
     !(/[A-Z]/g.test(password) && /[a-z]/g.test(password) && /[0-9]/g.test(password))
   ) {
+    submitButton.disabled = false
     new Notification({
       title: 'Password is too weak!',
       message:

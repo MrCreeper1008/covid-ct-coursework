@@ -17,16 +17,16 @@ function leftPad(string, char, len) {
 }
 
 /**
- * Checks whether all the specified fields are present in the given form.
+ * Finds the first missing field in a form.
  * @param {FormData} form The form to be checked.
  * @param {object} fields Fields in the form that must be present.
- * @returns {Boolean} Whether all given fields are present in the given form.
+ * @returns {String} The name of the missing field. null if no field is missing.
  */
-function checkFieldExistence(form, fields) {
+function findMissingField(form, fields) {
   for (const field in fields) {
     if (!form.get(field)) {
-      return false;
+      return field;
     }
   }
-  return true;
+  return null;
 }

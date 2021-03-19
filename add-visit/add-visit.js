@@ -71,9 +71,9 @@ function validateForm(form) {
   if (visitLocation == null) return false
 
   const { visitDate, ...requiredFields } = FIELDS
-  const areAllFieldsPresent = checkFieldExistence(form, requiredFields)
+  const missingField = findMissingField(form, requiredFields)
 
-  if (!areAllFieldsPresent) return false
+  if (missingField) return false
 
   /** @type {String} */
   const submittedDateString = form.get(FIELDS.date)
