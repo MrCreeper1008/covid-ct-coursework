@@ -2,7 +2,7 @@
   height: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 6rem 1fr;
+  grid-template-rows: 6rem minmax(0, 1fr);
   grid-template-areas:
     'heading heading'
     'nav content';
@@ -11,6 +11,8 @@
 .page-container > main {
   padding: 0 4rem;
   grid-area: content;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-container > .heading-container {

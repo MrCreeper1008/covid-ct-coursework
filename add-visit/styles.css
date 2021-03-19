@@ -1,6 +1,10 @@
 .location-map-container {
   grid-area: map;
   position: relative;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .location-map-container > #location-marker {
@@ -9,7 +13,7 @@
 }
 
 form#add-visit-form {
-  padding-top: 0.5rem;
+  padding: 0.5rem 0;
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: 2fr 3fr;
@@ -17,6 +21,7 @@ form#add-visit-form {
   grid-template-areas:
     'inputs map'
     'actions map';
+  min-height: 0;
 }
 
 .input-container {
@@ -34,5 +39,7 @@ form#add-visit-form {
 }
 
 img.map {
-  max-width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
 }
