@@ -1,20 +1,21 @@
 <?php
 
-use api\Response;
+require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
+require '../error.php';
 
-include 'get_locations.php';
-include 'add_location.php';
-include '../error.php';
+use api\Response;
 
 load_env();
 session_start();
 
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'GET':
+    require('get_locations.php');
     get_locations();
     break;
 
   case 'POST':
+    require('add_location.php');
     add_location();
     break;
 

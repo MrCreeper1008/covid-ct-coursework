@@ -1,9 +1,8 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
-include '../response.php';
-include '../error.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
+require_once '../response.php';
+require_once '../error.php';
 
 use api\Response;
 use db\DB;

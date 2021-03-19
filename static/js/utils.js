@@ -25,8 +25,16 @@ function leftPad(string, char, len) {
 function findMissingField(form, fields) {
   for (const field in fields) {
     if (!form.get(field)) {
-      return field;
+      return field
     }
   }
-  return null;
+  return null
+}
+
+/**
+ * Check if a given date is valid.
+ * @param {Date} date The date to be checked
+ */
+function isDateValid(date) {
+  return !isNaN(date)
 }

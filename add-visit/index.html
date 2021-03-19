@@ -26,9 +26,9 @@
         </div>
         <form id="add-visit-form">
           <div class="input-container">
-            <input type="date" class="input-box" placeholder="Date" />
-            <input type="time" class="input-box" placeholder="Time" />
-            <input type="number" class="input-box" placeholder="Duration" />
+            <input type="date" name="date" class="input-box" placeholder="Date" />
+            <input type="time" name="time" class="input-box" placeholder="Time" />
+            <input type="number" name="duration" class="input-box" placeholder="Duration" />
           </div>
           <div class="action-container">
             <button id="add-visit-btn" class="btn" type="submit">Add</button>
@@ -51,6 +51,7 @@
         </form>
       </main>
     </div>
+    <script src="../static/js/notification.js"></script>
     <script src="../static/js/utils.js"></script>
     <script src="../static/js/request.js"></script>
     <script src="add-visit.js"></script>

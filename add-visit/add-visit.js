@@ -58,8 +58,6 @@ function setLocationCoordinate(event) {
   locationMarker.style.top = `${y - 16}px`
 
   visitLocation = [x, y]
-
-  console.log({ x, y })
 }
 
 /**
@@ -68,10 +66,13 @@ function setLocationCoordinate(event) {
  * @returns {Boolean} Whether the form is valid.
  */
 function validateForm(form) {
+  console.log(visitLocation)
   if (visitLocation == null) return false
 
-  const { visitDate, ...requiredFields } = FIELDS
+  const { visitDate, locationX, locationY, ...requiredFields } = FIELDS
   const missingField = findMissingField(form, requiredFields)
+
+  console.log(missingField);
 
   if (missingField) return false
 
@@ -82,7 +83,15 @@ function validateForm(form) {
   const [year, month, date] = submittedDateString.split('-')
   const [hour, minute] = submittedTimeString.split('-')
 
-  const submittedDate = new Date(year, month - 1, date, hour, minute)
+  const submittedDate = new Date(year, month - 1, date, hour, minute, 0, 0)
+
+  if (!isDateValid(submittedDate)) {
+    new Notification({
+      title: 'The date you submitted is invalid!',
+      message: 'Please make sure the date and time you put in is correct.',
+      level: NOTIFICATION_ERROR,
+    })
+  }
 
   if (submittedDate > new Date()) {
     new Notification({
@@ -107,7 +116,12 @@ function validateForm(form) {
   return true
 }
 
-function handleFormSubmission() {
+/**
+ * called when a form submission is made.
+ * @param {Event} event The associated submit event
+ */
+function handleFormSubmission(event) {
+  event.preventDefault()
   toggleButtons({ disabled: true })
 
   const submittedForm = new FormData(addVisitForm)

@@ -10,8 +10,6 @@ const locationTable = document.getElementById('location-table')
 const noRecordLabel = document.getElementById('no-record-label')
 
 function locationsRequestResultListener() {
-  console.log(this.response)
-
   /**
    * @type{{
    * visited_on_timestamp: string,
