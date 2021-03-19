@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./src/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    environment:
+      MYSQL_DATABASE: covid_ct
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 4000:3306
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes: 
+      - .:/var/www/html
+    ports:
+      - 8081:80

@@ -1,0 +1,9 @@
+img.map {
+  border: 2px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.location-marker {
+  width: 16px;
+  height: 16px;
+}

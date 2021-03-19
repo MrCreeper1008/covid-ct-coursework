@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>COVID-CT: Home Page</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="heading-container">
+        <h1 class="heading">COVID - 19 Contact Tracing</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li class="selected"><a href="/home">Home</a></li>
+          <li><a href="/overview">Overview</a></li>
+          <li><a href="/add-visit">Add Visit</a></li>
+          <li><a href="/report">Report</a></li>
+          <li><a href="/settings">Settings</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="section-heading-container">
+          <h2 class="section-heading">Status</h2>
+        </div>
+        <div class="home-page">
+          <p id="status-text" class="status-text">test</p>
+          <p class="instruction-text">Click on the marker to see details about the infection.</p>
+          <img
+            id="location-map"
+            class="map"
+            src="../static/images/exeter.jpg"
+            alt="Map of Exeter"
+          />
+        </div>
+      </main>
+    </div>
+    <script src="home.js"></script>
+  </body>
+</html>

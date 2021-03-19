@@ -1,0 +1,59 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'heading'
+    'body';
+}
+
+body > div.heading-container {
+  grid-area: heading;
+}
+
+body > main {
+  grid-area: body;
+}
+
+.login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.login-form {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 2rem);
+  grid-template-areas:
+    'username-field username-field'
+    'password-field password-field'
+    '. .'
+    'login-btn cancel-btn'
+    'register-btn register-btn';
+  row-gap: 1rem;
+  column-gap: 1rem;;
+}
+
+input.username-box {
+  grid-area: username-field;
+}
+
+input.password-box {
+  grid-area: password-field;
+}
+
+button.login-btn {
+  grid-area: login-btn;
+}
+
+button.cancel-btn {
+  grid-area: cancel-btn;
+}
+
+button.register-btn {
+  grid-area: register-btn;
+}

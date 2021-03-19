@@ -1,0 +1,32 @@
+.heading-container {
+  grid-area: heading;
+}
+
+nav.navbar {
+  grid-area: nav;
+}
+
+.home-page {
+  padding: 0.5rem 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    'status map'
+    'instruction map';
+}
+
+img.map {
+  grid-area: map;
+  max-width: 100%;
+}
+
+.status-text {
+  grid-area: status;
+  margin: 0;
+}
+
+.instruction-text {
+  grid-area: instruction;
+}

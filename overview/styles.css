@@ -1,0 +1,10 @@
+.location-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+table.location-table {
+  padding: 1rem 0.5rem;
+}

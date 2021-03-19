@@ -1,0 +1,22 @@
+.page-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 6rem 1fr;
+  grid-template-areas:
+    'heading heading'
+    'nav content';
+}
+
+.page-container > main {
+  padding: 0 4rem;
+  grid-area: content;
+}
+
+.page-container > .heading-container {
+  grid-area: heading;
+}
+
+.page-container > .navbar {
+  grid-area: nav;
+}

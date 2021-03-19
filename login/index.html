@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <title>COVID-CT: Login</title>
+    <link rel="stylesheet" href="../static/styles/main.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="heading-container">
+      <h1 class="heading">COVID - 19 Contact Tracing</h1>
+    </div>
+    <main>
+      <div class="login-form-container">
+        <form id="login-form" class="login-form">
+          <input
+            type="text"
+            class="input-box username-box"
+            name="username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            class="input-box password-box"
+            name="password"
+            placeholder="Password"
+          />
+          <button class="btn login-btn" type="submit">Login</button>
+          <button class="btn cancel-btn">Cancel</button>
+          <button id="register-btn" class="btn register-btn">Register</button>
+        </form>
+      </div>
+    </main>
+    <script src="../static/js/notification.js"></script>
+    <script src="../static/js/request.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

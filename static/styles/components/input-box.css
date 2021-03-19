@@ -1,0 +1,16 @@
+input.input-box {
+  border: 1px solid black;
+  background-color: transparent;
+  text-align: center;
+}
+
+input.input-box::placeholder {
+  text-align: center;
+  opacity: 1;
+}
+
+input.input-box::-moz-placeholder,
+input.input-box::-webkit-placeholder {
+  text-align: center;
+  opacity: 1;
+}

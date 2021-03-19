@@ -1,0 +1,1 @@
+SELECT id, first_name, surname, username, pw from users where username = ?

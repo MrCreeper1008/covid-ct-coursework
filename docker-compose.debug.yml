@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  webdevcontacttracingcoursework:
+    image: webdevcontacttracingcoursework
+    build:
+      context: .
+      dockerfile: ./Dockerfile

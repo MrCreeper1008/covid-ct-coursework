@@ -1,0 +1,38 @@
+.location-map-container {
+  grid-area: map;
+  position: relative;
+}
+
+.location-map-container > #location-marker {
+  position: absolute;
+  z-index: 1;
+}
+
+form#add-visit-form {
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 2fr 3fr;
+  column-gap: 2rem;
+  grid-template-areas:
+    'inputs map'
+    'actions map';
+}
+
+.input-container {
+  grid-area: inputs;
+  display: grid;
+  grid-template-rows: repeat(3, 2rem);
+  row-gap: 0.5rem;
+}
+
+.action-container {
+  grid-area: actions;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 0.5rem;
+}
+
+img.map {
+  max-width: 100%;
+}

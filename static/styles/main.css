@@ -1,0 +1,37 @@
+@import 'components/components.css';
+@import 'utils.css';
+
+:root {
+  --main-color: rgb(173, 185, 202);
+  --select-color: rgb(132, 151, 176);
+  --error-color: rgb(250, 81, 15);
+  --success-color: rgb(40, 233, 169);
+  --text-font-family: 'Times New Roman', Times, serif;
+}
+
+* {
+  font-family: var(--text-font-family);
+  font-size: 20px;
+}
+
+body {
+  margin: 0rem;
+  padding: 0rem;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+}
+
+main::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1; /* place image behind all elements */
+  content: '';
+  opacity: 0.2;
+  background: no-repeat center top / 50% url(../images/watermark.png);
+}

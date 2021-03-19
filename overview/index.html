@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../static/styles/main.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>COVID-CT: Visits Overview</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="heading-container">
+        <h1 class="heading">COVID-19 Contact Tracing</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li class="selected"><a href="/overview">Overview</a></li>
+          <li><a href="/add-visit">Add Visit</a></li>
+          <li><a href="/report">Report</a></li>
+          <li><a href="/settings">Settings</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="location-table-container">
+          <table id="location-table" class="location-table hidden">
+            <caption class="hidden">
+              A table of your recently visited locations
+            </caption>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Duration</th>
+              <th scope="col">X</th>
+              <th scope="col">Y</th>
+            </tr>
+          </table>
+          <p id="no-record-label" class="hidden">No record found.</p>
+        </div>
+      </main>
+    </div>
+    <script src="../static/js/utils.js"></script>
+    <script src="../static/js/request.js"></script>
+    <script src="overview.js"></script>
+  </body>
+</html>
