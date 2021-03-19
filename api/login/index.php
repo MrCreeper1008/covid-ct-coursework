@@ -1,9 +1,8 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/src/models/error.php';
-include '../response.php';
-include '../error.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
+require '../response.php';
+require '../error.php';
 
 load_env();
 

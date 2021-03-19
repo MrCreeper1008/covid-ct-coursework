@@ -17,8 +17,6 @@ const registerBtn = document.getElementById('register-btn')
  * @param {ProgressEvent<EventTarget>} event the progress event for the login request
  */
 function loginRequestResultListener() {
-  const response = JSON.parse(this.response)
-
   switch (this.status) {
     case 500:
       new Notification({
@@ -29,6 +27,7 @@ function loginRequestResultListener() {
       break
 
     case 401:
+      const response = JSON.parse(this.response);
       new Notification({
         title: 'Unable to log you in!',
         message: response.error,
