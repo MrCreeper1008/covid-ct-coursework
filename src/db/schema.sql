@@ -10,7 +10,7 @@ CREATE TABLE users(
 CREATE TABLE visited_locations(
   id INTEGER AUTO_INCREMENT,
   username TEXT NOT NULL,
-  visited_on DATETIME NOT NULL,
+  visited_on TIMESTAMP NOT NULL,
   duration INT NOT NULL,
   location_x INT NOT NULL,
   location_y INT NOT NULL,

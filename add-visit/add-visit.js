@@ -66,40 +66,59 @@ function setLocationCoordinate(event) {
  * @returns {Boolean} Whether the form is valid.
  */
 function validateForm(form) {
-  console.log(visitLocation)
-  if (visitLocation == null) return false
+  if (visitLocation == null) {
+    toggleButtons({ disabled: false })
+    new Notification({
+      title: 'You must pick a location on the map!',
+      message: 'Click on the map to choose the location you have visited',
+      level: NOTIFICATION_ERROR,
+    }).show()
+    return false
+  }
 
   const { visitDate, locationX, locationY, ...requiredFields } = FIELDS
   const missingField = findMissingField(form, requiredFields)
 
-  console.log(missingField);
+  console.log(missingField)
 
-  if (missingField) return false
+  if (missingField) {
+    toggleButtons({ disabled: false })
+    new Notification({
+      title: 'Missing required field!',
+      message: `You must fill in the ${missingField} field.`,
+      level: NOTIFICATION_ERROR,
+    }).show()
+    return false
+  }
 
   /** @type {String} */
   const submittedDateString = form.get(FIELDS.date)
   const submittedTimeString = form.get(FIELDS.time)
 
   const [year, month, date] = submittedDateString.split('-')
-  const [hour, minute] = submittedTimeString.split('-')
+  const [hour, minute] = submittedTimeString.split(':')
 
   const submittedDate = new Date(year, month - 1, date, hour, minute, 0, 0)
 
+  console.log({ submittedDate })
+
   if (!isDateValid(submittedDate)) {
+    toggleButtons({ disabled: false })
     new Notification({
       title: 'The date you submitted is invalid!',
       message: 'Please make sure the date and time you put in is correct.',
       level: NOTIFICATION_ERROR,
-    })
+    }).show()
+    return false
   }
 
   if (submittedDate > new Date()) {
+    toggleButtons({ disabled: false })
     new Notification({
       title: 'The visit data must be in the past!',
       message: 'The date of visit must be in the past (obviously).',
       level: NOTIFICATION_ERROR,
     }).show()
-
     return false
   }
 

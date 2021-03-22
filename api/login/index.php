@@ -1,8 +1,10 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/config.php';
 require '../response.php';
 require '../error.php';
+require 'save_login.php';
 
 load_env();
 
@@ -46,7 +48,7 @@ if (!$user) {
 }
 
 // verify the password
-$is_password_correct = password_verify($_POST['password'], $user['password']);
+$is_password_correct = password_verify($_POST['password'], $user['pw']);
 
 if (!$is_password_correct) {
   $response = new Response();
@@ -59,6 +61,10 @@ if (!$is_password_correct) {
 
   return;
 }
+
+setcookie($IS_LOGGED_IN, true, $expiration, '/');
+session_start();
+$_SESSION['username'] = $user['username'];
 
 $response = new Response();
 

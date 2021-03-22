@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
 require_once '../response.php';
@@ -11,6 +12,7 @@ function get_locations()
 {
   $SERVER_ERROR_MESSAGE = "An error occurred when fetching locations.";
 
+  $username = $_SESSION['username'];
   $db = DB::get_instance();
 
   $query_string = file_get_contents('sql/get_locations.sql');

@@ -1,9 +1,11 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
-include '../response.php';
-include '../error.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/db/db.php';
+require '../response.php';
+require '../error.php';
+require '../login/save_login.php';
 
 use api\Response;
 use api\ApiError;
@@ -85,9 +87,7 @@ if (!$result) {
 
 $user = $result->fetch_assoc();
 
-session_start();
-
-$_SESSION['username'] = $user['username'];
+save_login($user, $LOGIN_EXPIRATION);
 
 $response = new Response();
 

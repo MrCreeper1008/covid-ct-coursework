@@ -6,7 +6,6 @@ require '../error.php';
 use api\Response;
 
 load_env();
-session_start();
 
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'GET':
