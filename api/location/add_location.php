@@ -31,9 +31,7 @@ function add_location()
     return;
   }
 
-  $result = $query->get_result();
-
-  if (!$result || $db->affected_rows != 1) {
+  if ($query->affected_rows != 1) {
     Response::raise_internal_error($SERVER_ERROR_MESSAGE);
     return;
   }

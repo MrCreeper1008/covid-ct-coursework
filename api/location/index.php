@@ -18,6 +18,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
     add_location();
     break;
 
+  case 'DELETE':
+    require('delete_location.php');
+    delete_location();
+    break;
+
   default:
     Response::raise_unsupported_method_error();
     break;

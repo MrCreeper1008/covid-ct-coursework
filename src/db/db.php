@@ -17,7 +17,7 @@ class DB
       self::$instance = new mysqli('db', $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
     }
 
-    mysqli_report(MYSQLI_REPORT_ERROR);
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     return self::$instance;
   }

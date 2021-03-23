@@ -1,10 +1,33 @@
 .location-table-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 table.location-table {
   padding: 1rem 0.5rem;
+}
+
+table.location-table th {
+  padding: 0.5rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20;
+  font-weight: bold;
+}
+
+table.location-table th.date-col-header {
+  text-align: right;
+}
+
+table.location-table td {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-family: var(--text-font-family);
+  font-size: 20;
+}
+
+table.location-table td > img.remove-button {
+  width: 1rem;
+  vertical-align: top;
 }

@@ -13,7 +13,7 @@ class Notification {
   TIMEOUT = 3000
   ANIMATION_DURATION = 200
 
-  constructor({ title, message, level = NOTIFICATION_NORMAL }) {
+  constructor({ title, message = '', level = NOTIFICATION_NORMAL }) {
     this.title = title
     this.message = message
     this.level = level
@@ -31,15 +31,18 @@ class Notification {
     const title = document.createElement('p')
     title.className = 'notification-header'
     title.innerHTML = this.title
+    notification.appendChild(title)
 
-    const message = document.createElement('p')
-    message.className = 'notification-content'
-    message.innerHTML = this.message
+    if (this.message) {
+      const message = document.createElement('p')
+      message.className = 'notification-content'
+      message.innerHTML = this.message
+      notification.appendChild(message)
+    }
 
     this.id = this.generateId().toString()
     notification.className = `notification ${__LEVEL_CLASS[this.level]} notification-active`
     notification.id = this.id
-    notification.appendChild(title).appendChild(message)
     notification.addEventListener('mouseover', this.resetTimer)
     notification.addEventListener('mouseleave', this.startDismissTimer)
 

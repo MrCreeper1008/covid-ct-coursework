@@ -50,11 +50,13 @@ function toggleButtons({ disabled }) {
  */
 function setLocationCoordinate(event) {
   const rect = event.currentTarget.getBoundingClientRect()
+  const parentRect = locationMap.parentElement.getBoundingClientRect()
+
   const x = event.clientX - rect.left
   const y = event.clientY - rect.top
 
   locationMarker.classList.remove('hidden')
-  locationMarker.style.left = `${x - 8}px`
+  locationMarker.style.left = `${x - 8 + rect.left - parentRect.left}px`
   locationMarker.style.top = `${y - 16}px`
 
   visitLocation = [x, y]
@@ -146,10 +148,12 @@ function handleFormSubmission(event) {
   const submittedForm = new FormData(addVisitForm)
   const isFormValid = validateForm(submittedForm)
 
+  console.log(isFormValid)
+
   if (isFormValid) {
     new Request({
-      method: 'POST',
-      url: '/locations',
+      method: POST,
+      url: '/location',
       form: submittedForm,
     })
       .addListener(addVisitRequestResultListener)
@@ -158,6 +162,8 @@ function handleFormSubmission(event) {
 }
 
 function addVisitRequestResultListener() {
+  console.log(this.response)
+
   toggleButtons({ disabled: false })
 
   switch (this.status) {

@@ -26,13 +26,13 @@
             <caption class="hidden">
               A table of your recently visited locations
             </caption>
-            <tr>
-              <th scope="col">Date</th>
+            <thead>
+              <th scope="col" class="date-col-header">Date</th>
               <th scope="col">Time</th>
               <th scope="col">Duration</th>
               <th scope="col">X</th>
               <th scope="col">Y</th>
-            </tr>
+            </thead>
           </table>
           <p id="no-record-label" class="hidden">No record found.</p>
         </div>
@@ -40,6 +40,7 @@
     </div>
     <script src="../static/js/utils.js"></script>
     <script src="../static/js/request.js"></script>
+    <script src="../static/js/notification.js"></script>
     <script src="overview.js"></script>
   </body>
 </html>

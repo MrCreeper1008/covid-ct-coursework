@@ -1,5 +1,6 @@
 const GET = 'GET'
 const POST = 'POST'
+const DELETE = 'DELETE'
 
 /**
  * Describes a RESTful request to the server.
@@ -7,8 +8,9 @@ const POST = 'POST'
 class Request {
   SERVER_URL = 'http://localhost:8081/api'
 
-  constructor({ method, data = null, form = null, url }) {
+  constructor({ method, params = {}, data = null, form = null, url }) {
     this.method = method
+    this.params = params
     this.data = data
     this.form = form
     this.url = `${this.SERVER_URL}${url}/index.php`
@@ -21,7 +23,7 @@ class Request {
   }
 
   send = () => {
-    this.xhr.open(this.method, this.url)
+    this.xhr.open(this.method, `${this.url}${this.paramsString()}`)
 
     if (this.data) {
       this.xhr.setRequestHeader('Content-Type', 'application/json')
@@ -32,4 +34,10 @@ class Request {
       this.xhr.send()
     }
   }
+
+  paramsString = () =>
+    Object.keys(this.params).reduce(
+      (str, key, i) => `${str}${i === 0 ? '?' : '&'}${key}=${this.params[key]}`,
+      '',
+    )
 }
