@@ -62,10 +62,8 @@ if (!$is_password_correct) {
   return;
 }
 
-setcookie($IS_LOGGED_IN, true, $expiration, '/');
-session_start();
-$_SESSION['username'] = $user['username'];
-
+save_login($user, $LOGIN_EXPIRATION);
+ 
 $response = new Response();
 
 $response

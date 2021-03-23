@@ -27,7 +27,7 @@ function loginRequestResultListener() {
       break
 
     case 401:
-      const response = JSON.parse(this.response);
+      const response = JSON.parse(this.response)
       new Notification({
         title: 'Unable to log you in!',
         message: response.error,
