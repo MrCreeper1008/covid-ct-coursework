@@ -38,3 +38,24 @@ function findMissingField(form, fields) {
 function isDateValid(date) {
   return !isNaN(date)
 }
+
+/**
+ * @param {String} dateStr A date string in the format of yyyy-mm-dd
+ * @param {String} timeStr A time string in the format of hh:mm
+ * @returns New instance of Date from date string and time string returned by
+ * date field and time field.
+ */
+function getDateFromDateTimeString(dateStr, timeStr) {
+  const [year, month, date] = dateStr.split('-')
+  const [hour, minute] = timeStr.split(':')
+
+  return new Date(year, month - 1, date, hour, minute, 0, 0)
+}
+
+/**
+ * @param {Date} date The source date
+ * @returns The unix timestamp of the given date in seconds.
+ */
+function unixTimestamp(date) {
+  return Math.floor(date.getTime() / 1000)
+}

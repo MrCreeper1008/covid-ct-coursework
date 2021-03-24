@@ -21,4 +21,5 @@ CREATE TABLE infection_reports(
   id INTEGER AUTO_INCREMENT,
   username TEXT NOT NULL,
   infected_on TIMESTAMP NOT NULL,
-)
+  PRIMARY KEY (id)
+);

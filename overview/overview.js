@@ -20,7 +20,7 @@ function locationsRequestResultListener() {
   console.log(this.response)
 
   /**
-   * @type{{
+   * @type {{
    * id: number,
    * visited_on_timestamp: string,
    * duration: number,
@@ -41,7 +41,7 @@ function locationsRequestResultListener() {
       const date = new Date(visited_on_timestamp * 1000)
 
       const dateStr = leftPad(date.getDate().toString(), '0', 2)
-      const monthStr = leftPad(date.getMonth().toString(), '0', 2)
+      const monthStr = leftPad((date.getMonth() + 1).toString(), '0', 2)
       const yearStr = leftPad(date.getFullYear().toString(), '0', 4)
       const hourStr = leftPad(date.getHours().toString(), '0', 2)
       const minStr = leftPad(date.getMinutes().toString(), '0', 2)

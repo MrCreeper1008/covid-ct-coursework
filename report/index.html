@@ -4,7 +4,7 @@
     <meta charset="utf8" />
     <title>Report</title>
     <link rel="stylesheet" href="../static/styles/main.css" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-container">
@@ -29,15 +29,19 @@
             Please report the date and time when you were tested positive for COVID 19.
           </p>
           <div class="input-container">
-            <input type="date" name="infection-date" class="input-box">
-            <input type="time" name="infection-time" class="input-box">
+            <input required type="date" name="infection-date" class="input-box" />
+            <input required type="time" name="infection-time" class="input-box" />
           </div>
           <div class="button-container">
-            <button class="btn">Report</button>
-            <button class="btn">Cancel</button>
+            <button id="report-btn" class="btn" type="submit">Report</button>
+            <button id="cancel-btn" class="btn" type="reset">Cancel</button>
           </div>
         </form>
       </main>
     </div>
+    <script src="../static/js/request.js"></script>
+    <script src="../static/js/utils.js"></script>
+    <script src="../static/js/notification.js"></script>
+    <script src="report.js"></script>
   </body>
 </html>

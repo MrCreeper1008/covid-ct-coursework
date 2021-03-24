@@ -15,7 +15,7 @@ form#infection-report-form div.input-container {
   grid-template-columns: 1fr;
   row-gap: 0.5rem;
   padding-top: 4rem;
-  width: 50%;
+  width: 40%;
 }
 
 form#infection-report-form div.button-container {
