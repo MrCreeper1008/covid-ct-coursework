@@ -16,3 +16,9 @@ CREATE TABLE visited_locations(
   location_y INT NOT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE infection_reports(
+  id INTEGER AUTO_INCREMENT,
+  username TEXT NOT NULL,
+  infected_on TIMESTAMP NOT NULL,
+)
