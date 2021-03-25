@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <title>COVID-CT: Settings</title>
+    <link rel="stylesheet" href="../static/styles/main.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="heading-container">
+        <h1 class="heading">COVID-19 Contact Tracing</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/overview">Overview</a></li>
+          <li><a href="/add-visit">Add Visit</a></li>
+          <li><a href="/report">Report</a></li>
+          <li class="selected"><a href="/settings">Settings</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="section-heading-container">
+          <h2 class="section-heading">Alert Settings</h2>
+        </div>
+        <form id="settings-form">
+          <p class="instruction">
+            Here you may change the alert distance and the time span for which the contact tracing
+            will be performed.
+          </p>
+          <div class="input-container">
+            <div class="field">
+              <label for="window-dropdown">window</label>
+              <select name="window" id="window-dropdown" class="control dropdown">
+                <option value="1">one week</option>
+                <option value="2">two weeks</option>
+                <option value="3">three weeks</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="distance-field">distance</label>
+              <input type="number" id="distance-field" class="control input-box" name="distance" />
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="btn" type="submit">Report</button>
+            <button class="btn" type="reset">Cancel</button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script src="../static/js/utils.js"></script>
+    <script src="../static/js/notification.js"></script>
+    <script src="../static/js/request.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

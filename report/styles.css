@@ -9,7 +9,7 @@ form#infection-report-form .instruction {
   text-align: center;
 }
 
-form#infection-report-form div.input-container {
+form#infection-report-form .input-container {
   display: grid;
   grid-template-rows: repeat(2, 2rem);
   grid-template-columns: 1fr;
@@ -18,7 +18,7 @@ form#infection-report-form div.input-container {
   width: 40%;
 }
 
-form#infection-report-form div.button-container {
+form#infection-report-form .button-container {
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;

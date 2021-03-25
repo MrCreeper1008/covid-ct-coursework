@@ -31,6 +31,16 @@ function findMissingField(form, fields) {
   return null
 }
 
+function filterMissingFieldInForm(form, fields) {
+  let field
+  do {
+    field = findMissingField(form, fields)
+    if (field) {
+      submittedForm.delete(field)
+    }
+  } while (field)
+}
+
 /**
  * Check if a given date is valid.
  * @param {Date} date The date to be checked
