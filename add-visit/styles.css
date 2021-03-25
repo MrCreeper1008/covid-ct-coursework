@@ -1,8 +1,6 @@
 .location-map-container {
   grid-area: map;
   position: relative;
-  min-width: 0;
-  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -41,10 +39,4 @@ form#add-visit-form {
   display: grid;
   grid-template-rows: repeat(2, auto);
   row-gap: 0.5rem;
-}
-
-img.map {
-  height: 100%;
-  min-height: 0;
-  min-width: 0;
 }

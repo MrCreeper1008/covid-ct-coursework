@@ -9,9 +9,9 @@ nav.navbar {
 .home-page {
   padding: 0.5rem 0;
   display: grid;
-  width: 100%;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
+  column-gap: 2rem;
   grid-template-areas:
     'status map'
     'instruction map';
@@ -20,9 +20,6 @@ nav.navbar {
 
 img.map {
   grid-area: map;
-  height: 100%;
-  max-width: 100%;
-  min-width: 0;
   min-height: 0;
   justify-self: end;
 }
