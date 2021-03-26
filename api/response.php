@@ -23,6 +23,17 @@ class Response
       ->send();
   }
 
+  public static function raise_unauthorized_error()
+  {
+    $response = new Response();
+    $error = new ApiError('Unauthorized');
+
+    $response
+      ->set_status_code(401)
+      ->set_data($error)
+      ->send();
+  }
+
   public static function raise_unsupported_method_error()
   {
     $response = new Response();

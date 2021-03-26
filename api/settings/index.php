@@ -1,9 +1,15 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
+require '../login/cookies.php';
 require '../error.php';
 
 use api\Response;
+
+if (!isset($_COOKIE[$IS_LOGGED_IN])) {
+  Response::raise_unauthorized_error();
+  return;
+}
 
 load_env();
 

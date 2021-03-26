@@ -1,10 +1,17 @@
 <?php
 
+require $_SERVER['DOCUMENT_ROOT'] . '/src/loader.php';
+require '../login/cookies.php';
+require '../response.php';
+
 use api\Response;
 
-session_start();
+if (!isset($_COOKIE[$IS_LOGGED_IN])) {
+  Response::raise_unauthorized_error();
+  return;
+}
 
-require '../response.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $response = new Response();
