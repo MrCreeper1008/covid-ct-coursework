@@ -10,22 +10,26 @@ class WebService
 
   private static $MOCK_SERVICE_URL = 'host.docker.internal:8080';
 
-  public static function new_request(string $method, string $endpoint, array $input): CurlHandle
-  {
+  public static function new_request(
+    string $method,
+    string $endpoint,
+    string $query_string = '',
+    array $input = []
+  ): CurlHandle {
     $req = curl_init();
 
     curl_setopt(
       $req,
       CURLOPT_URL,
       $_ENV['PHP_ENV'] === 'prod'
-        ? self::$SERVICE_URL . $endpoint
-        : self::$MOCK_SERVICE_URL . $endpoint . '_mock.php'
+        ? self::$SERVICE_URL . $endpoint . $query_string
+        : self::$MOCK_SERVICE_URL . $endpoint . '_mock.php' . $query_string
     );
     curl_setopt($req, CURLOPT_CUSTOMREQUEST, $method);
-    curl_setopt($req, CURLOPT_HEADER, true);
+    curl_setopt($req, CURLOPT_HEADER, false);
     curl_setopt($req, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
     curl_setopt($req, CURLOPT_POSTFIELDS, json_encode($input));
-    curl_setopt($req, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
 
     return $req;
   }

@@ -25,17 +25,21 @@
           <h2 class="section-heading">Status</h2>
         </div>
         <div class="home-page">
-          <p id="status-text" class="status-text">test</p>
+          <p id="status-text" class="status-text" />
           <p class="instruction-text">Click on the marker to see details about the infection.</p>
-          <img
-            id="location-map"
-            class="map"
-            src="../static/images/exeter.jpg"
-            alt="Map of Exeter"
-          />
+          <div id="map-container" class="map-container">
+            <img
+              id="location-map"
+              class="map"
+              src="../static/images/exeter.jpg"
+              alt="Map of Exeter"
+            />
+          </div>
         </div>
       </main>
     </div>
+    <script src="../static/js/request.js"></script>
+    <script src="../static/js/notification.js"></script>
     <script src="home.js"></script>
   </body>
 </html>

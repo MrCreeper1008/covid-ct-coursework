@@ -36,7 +36,7 @@ function report_infection()
     return;
   }
 
-  $query_str = file_get_contents('sql/find_visits.sql');
+  $query_str = file_get_contents('sql/find_previous_visits.sql');
   $prev_visits_query = $db->prepare($query_str);
   $prev_visits_query->bind_param('ss', $username, $infection_date);
 

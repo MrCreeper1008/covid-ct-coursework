@@ -18,10 +18,19 @@ nav.navbar {
   min-height: 0;
 }
 
-img.map {
+.map-container {
+  position: relative;
   grid-area: map;
+}
+
+img.map {
   min-height: 0;
-  justify-self: end;
+}
+
+.visit-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .status-text {

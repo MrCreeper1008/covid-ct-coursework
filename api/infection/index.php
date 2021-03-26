@@ -13,6 +13,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
     report_infection();
     break;
 
+  case 'GET':
+    require('get_infections.php');
+    get_infections();
+    break;
+
   default:
     Response::raise_unsupported_method_error();
     break;
