@@ -1,11 +1,13 @@
 nav.navbar {
   background-color: var(--main-color);
+  height: 100%;
 }
 
 nav.navbar > ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 100%;
 }
 
 nav.navbar > ul > li {
@@ -16,6 +18,11 @@ nav.navbar > ul > li {
 
 nav.navbar > ul > li.selected {
   background-color: var(--select-color);
+}
+
+nav.navbar > ul > li.end {
+  display: flex;
+  align-self: flex-end;
 }
 
 nav.navbar > ul > li > a {

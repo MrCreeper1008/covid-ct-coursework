@@ -79,6 +79,13 @@ function fetchInfections() {
     .send()
 }
 
+function logout() {
+  new Request({
+    method: GET,
+    url: '/logout',
+  }).send()
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchUsername()
   fetchInfections()
