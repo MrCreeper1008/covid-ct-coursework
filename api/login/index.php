@@ -62,8 +62,8 @@ if (!$is_password_correct) {
   return;
 }
 
-save_login($user, $LOGIN_EXPIRATION);
- 
+save_login($user);
+
 $response = new Response();
 
 $response

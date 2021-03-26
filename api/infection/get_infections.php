@@ -20,8 +20,8 @@ function get_infections()
   $db = DB::get_instance();
 
   $username = $_SESSION['username'];
-  $window = intval($_COOKIE[$WINDOW_COOKIE]);
-  $distance_threshold = intval($_COOKIE[$DISTANCE_COOKIE]);
+  $window = isset($_COOKIE[$WINDOW_COOKIE]) ? intval($_COOKIE[$WINDOW_COOKIE]) : 1;
+  $distance_threshold = isset($_COOKIE[$DISTANCE_COOKIE]) ? intval($_COOKIE[$DISTANCE_COOKIE]) : 10;
 
   $infected_visit_query_string = file_get_contents('sql/get_infections.sql');
   $infected_visit_query = $db->prepare($infected_visit_query_string);
