@@ -6,7 +6,8 @@ const DELETE = 'DELETE'
  * Describes a RESTful request to the server.
  */
 class Request {
-  SERVER_URL = 'http://localhost:8081/api'
+  SERVER_URL =
+    'http://ml-lab-4d78f073-aa49-4f0e-bce2-31e5254052c7.ukwest.cloudapp.azure.com:54895/api'
 
   constructor({ method, params = {}, data = null, form = null, url }) {
     this.method = method

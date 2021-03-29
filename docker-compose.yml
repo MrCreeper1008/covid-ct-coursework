@@ -19,4 +19,4 @@ services:
     volumes: 
       - .:/var/www/html
     ports:
-      - 8081:80
+      - 80:80
